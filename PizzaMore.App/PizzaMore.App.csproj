@@ -50,6 +50,8 @@
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Home\Index.cs" />
+    <Compile Include="Views\Home\SignIn.cs" />
+    <Compile Include="Views\Home\SignUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

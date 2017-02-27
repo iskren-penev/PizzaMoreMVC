@@ -32,15 +32,16 @@
                     },
                     new Route()
                     {
-                        Name = "Main CSS",
+                        Name = "Custom CSS",
                         Method = RequestMethod.GET,
-                        UrlRegex = "/css/main.css$",
+                        UrlRegex = @"/css/.+\.css$",
                         Callable = (request) =>
                         {
+                            string nameOfCssFile = request.Url.Substring(request.Url.LastIndexOf('/') + 1);
                             var response = new HttpResponse()
                             {
                                 StatusCode = ResponseStatusCode.Ok,
-                                ContentAsUTF8 = PathReader.Read("../../content/css/main.css")
+                                ContentAsUTF8 = PathReader.Read($"../../content/css/{nameOfCssFile}")
                             };
                             response.Header.ContentType = "text/css";
                             return response;
@@ -59,6 +60,23 @@
                                 ContentAsUTF8 =PathReader.Read("../../content/bootstrap/css/bootstrap.min.css.map")
                             };
                             response.Header.ContentType = "application/json";
+                            return response;
+                        }
+                    },
+                    new Route()
+                    {
+                        Name = "Images",
+                        Method = RequestMethod.GET,
+                        UrlRegex = @"/images/.+\.jpg$",
+                        Callable = (request) =>
+                        {
+                            string imageName = request.Url.Substring(request.Url.LastIndexOf('/') + 1);
+                            var response = new HttpResponse()
+                            {
+                                StatusCode = ResponseStatusCode.Ok,
+                                Content = PathReader.ReadContent($"../../content/images/{imageName}")
+                            };
+                            response.Header.ContentType = "image/jpeg";
                             return response;
                         }
                     },

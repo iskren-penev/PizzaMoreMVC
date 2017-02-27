@@ -11,5 +11,18 @@
         {
             return this.View();
         }
+
+        [HttpGet]
+        public IActionResult Signin()
+        {
+            return this.View();
+        }
+
+        [HttpGet]
+        public IActionResult Signup()
+        {
+            return this.View();
+        }
+
     }
 }
