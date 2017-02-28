@@ -54,15 +54,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\SignInBindingModel.cs" />
+    <Compile Include="BindingModels\SignUpBindingModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Data.cs" />
     <Compile Include="Data\PizzaContext.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\PathReader.cs" />
+    <Compile Include="Helpers\SignInManager.cs" />
+    <Compile Include="Migrations\201702281810376_InitialCreate.cs" />
+    <Compile Include="Migrations\201702281810376_InitialCreate.Designer.cs">
+      <DependentUpon>201702281810376_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Pizza.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="RouteTable.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Home\Index.cs" />
@@ -84,9 +95,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BindingModels\" />
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702281810376_InitialCreate.resx">
+      <DependentUpon>201702281810376_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
