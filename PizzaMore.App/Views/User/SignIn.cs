@@ -1,4 +1,4 @@
-﻿namespace PizzaMore.App.Views.Home
+﻿namespace PizzaMore.App.Views.User
 {
     using PizzaMore.App.Helpers;
     using SimpleMVC.Interfaces;
