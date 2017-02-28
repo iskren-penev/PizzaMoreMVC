@@ -1,7 +1,7 @@
 ﻿namespace PizzaMore.App.Controllers
 {
     using PizzaMore.App.BindingModels;
-    using PizzaMore.App.Helpers;
+    using PizzaMore.App.Security;
     using PizzaMore.App.Services;
     using SimpleHttpServer.Models;
     using SimpleMVC.Attributes.Methods;
@@ -16,6 +16,20 @@
         {
             this.signInManager = new SignInManager(Data.Data.Context);
         }
+
+        [HttpGet]
+        public IActionResult Index(HttpSession session, HttpResponse response)
+        {
+            if (!this.signInManager.IsAuthenticated(session))
+            {
+                Redirect(response, "/home/index");
+                return null;
+            }
+
+            return this.View();
+        }
+
+
         [HttpGet]
         public IActionResult Signin()
         {

@@ -4,6 +4,8 @@
     {
         public static string HomePath => "../../content/home.html";
 
+        public static string HomeLoggedPath => "../../content/indexLogged.html";
+
         public static string HomeDePath => "../../content/home-de.html";
 
         public static string DetailsPath => "../../content/details.html";

@@ -1,4 +1,4 @@
-﻿namespace PizzaMore.App.Helpers
+﻿namespace PizzaMore.App.Security
 {
     using System.Collections.Generic;
     using PizzaMore.App.Data;
@@ -16,13 +16,8 @@
 
         public bool IsAuthenticated(HttpSession session)
         {
-            List<string> sessionIds = this.context.Sessions.Select(s => s.Id).ToList();
-            if (sessionIds.Contains(session.Id))
-            {
-                return true;
-            }
-
-            return false;
+            return this.context.Sessions.Any(s => s.Id == session.Id && s.IsActive);
+            
         }
     }
 }

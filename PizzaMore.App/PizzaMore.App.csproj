@@ -62,7 +62,7 @@
     <Compile Include="Data\PizzaContext.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\PathReader.cs" />
-    <Compile Include="Helpers\SignInManager.cs" />
+    <Compile Include="Security\SignInManager.cs" />
     <Compile Include="Migrations\201702281810376_InitialCreate.cs" />
     <Compile Include="Migrations\201702281810376_InitialCreate.Designer.cs">
       <DependentUpon>201702281810376_InitialCreate.cs</DependentUpon>
@@ -77,6 +77,7 @@
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Home\Index.cs" />
+    <Compile Include="Views\User\Index.cs" />
     <Compile Include="Views\User\SignIn.cs" />
     <Compile Include="Views\User\SignUp.cs" />
   </ItemGroup>
